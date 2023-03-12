@@ -8,6 +8,8 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class ControlService {
    private url = 'http://localhost:3000/';
   private techtalk = 'http://192.168.9.47:3125/'
+  private projectDev = 'http://192.168.9.47:3737/'
+  
   constructor(private HttpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
