@@ -16,8 +16,28 @@ export class ControlService {
   }
 
   ///////////////////////
+  ///// ProjectDev /////
+  //////////////////////
+
+  // Projects
+  getAllProjects() {
+    return this.HttpClient.get(this.url + 'projects/index')
+      .pipe(catchError(this.errorHttpHandler))
+  }
+   filterALLChartYear(year: any) {
+    return this.HttpClient.get(this.url + `projects/filterAllByYear/${year}`)
+      .pipe(catchError(this.errorHttpHandler))
+  }
+  filterChartBySection(section: any, year: any) {
+    return this.HttpClient.get(this.url + `projects/filterBySection/${year}/${section}`)
+      .pipe(catchError(this.errorHttpHandler))
+  }
+
+
+  ///////////////////////
   ////// TechTalk //////
   //////////////////////
+
   // Categories
   getCategories() {
     return this.HttpClient.get(this.url + 'categories')
@@ -39,7 +59,6 @@ export class ControlService {
     return this.HttpClient.delete(this.url + `categories/${id}`)
       .pipe(catchError(this.errorHttpHandler))
   }
-
 
   // Articles
   getArticles() {
@@ -66,6 +85,8 @@ export class ControlService {
     return this.HttpClient.get(this.url + `articles/filter/${name}`)
       .pipe(catchError(this.errorHttpHandler))
   }
+
+
 
 
    // Error handling
