@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "technicalDashboard": {
+    "technical-dashboard": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "technicalDashboard:build:production"
+              "browserTarget": "technical-dashboard:build:production"
             },
             "development": {
-              "browserTarget": "technicalDashboard:build:development"
+              "browserTarget": "technical-dashboard:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "technicalDashboard:build"
+            "browserTarget": "technical-dashboard:build"
           }
         },
         "test": {
