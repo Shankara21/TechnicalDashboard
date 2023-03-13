@@ -1,10 +1,11 @@
- <div class="container px-2 py-4 mx-auto">
-    <h1 class="mb-2 text-4xl font-extrabold text-gray-900">
-      <span
-        class="text-transparent bg-clip-text bg-gradient-to-r to-[#144272] from-[#0A2647]"
-        >TechTalk</span
-      >
-    </h1>
+<div class="container px-2 py-4 mx-auto">
+  <h1 class="mb-2 text-4xl font-extrabold text-gray-900">
+    <span
+      class="text-transparent bg-clip-text bg-gradient-to-r to-[#144272] from-[#0A2647]"
+      >TechTalk</span
+    >
+  </h1>
+  <div class="flex items-end justify-between md:items-center">
     <div class="flex items-end">
       <form [formGroup]="category">
         <label
@@ -31,55 +32,89 @@
         <img src="assets/refresh.png" alt="kiw" srcset="" class="w-10" />
       </button>
     </div>
-    <div class="grid grid-cols-1 gap-8 mt-4 md:grid-cols-2">
-      <!-- Call from API -->
-
-      <div
-        class="rounded-lg lg:flex hover:bg-white"
-        *ngFor="
-          let item of articles
-            | filter : term
-            | paginate : { itemsPerPage: itemsPerPage, currentPage: p }
-        "
+    <div>
+      <label
+        for="default-search"
+        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        >Search</label
       >
-        <a routerLink="/article/{{ item.title }}">
-          <!-- <img
-            class="object-cover w-full h-56 rounded-lg lg:w-64"
-            src="http://192.168.9.47:3125/{{ item.cover }}"
-            alt=""
-          /> -->
-          <img
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5 text-gray-500 dark:text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
+        </div>
+        <input
+          type="search"
+          id="default-search"
+          class="block w-full p-2.5 pl-10 text-sm text-gray-900  border-gray-300 rounded-lg bg-gray-50 "
+          placeholder="Search Article"
+          [(ngModel)]="term"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- List Article -->
+  <div class="grid grid-cols-1 gap-8 p-1 mt-4 md:grid-cols-2">
+    <div
+      class="rounded-lg lg:flex hover:bg-white"
+      *ngFor="
+        let item of articles
+          | filter : term
+          | paginate : { itemsPerPage: itemsPerPage, currentPage: p }
+      "
+    >
+      <a routerLink="/article/{{ item.title }}">
+        <img
+          class="object-cover w-full h-56 rounded-lg lg:w-64"
+          src="http://192.168.9.47:3125/{{ item.cover }}"
+          alt=""
+        />
+        <!-- <img
             class="object-cover w-full h-56 rounded-lg lg:w-64"
             src="http://localhost:3000/{{ item.cover }}"
             alt=""
-          />
-        </a>
-        <!-- <a routerLink="/detailArticle/{{ item.title }}"> -->
-        <div class="flex flex-col justify-between py-6 lg:mx-6">
-          <div>
-            <a
-              routerLink="/article/{{ item.title }}"
-              class="text-xl font-semibold text-gray-800 hover:underline"
-            >
-              {{ item.title }}
-            </a>
-            <p class="text-sm text-[#3A98B9]">
-              Category : {{ item.Category.name }}
-            </p>
-          </div>
-          <div>
-            <p class="text-sm text-gray-500">By : {{ item.User.username }}</p>
-            <span class="text-sm text-gray-500"
-              >On: {{ item.createdAt | date : "d MMMM yyy" }}</span
-            >
-          </div>
+          /> -->
+      </a>
+      <!-- <a routerLink="/detailArticle/{{ item.title }}"> -->
+      <div class="flex flex-col justify-between py-6 md:px-3 lg:mx-6">
+        <div>
+          <a
+            routerLink="/article/{{ item.title }}"
+            class="text-xl font-semibold text-gray-800 hover:underline"
+          >
+            {{ item.title }}
+          </a>
+          <p class="text-sm text-[#3A98B9]">
+            Category : {{ item.Category.name }}
+          </p>
         </div>
-        <!-- </a> -->
+        <div>
+          <p class="text-sm text-gray-500">By : {{ item.User.username }}</p>
+          <span class="text-sm text-gray-500"
+            >On: {{ item.createdAt | date : "d MMMM yyy" }}</span
+          >
+        </div>
       </div>
-
-     
-    </div>
-    <div *ngIf="articles.length >= 10" class="my-10 text-center">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <!-- </a> -->
     </div>
   </div>
+  <div *ngIf="articles.length >= 10" class="my-10 text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

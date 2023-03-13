@@ -1,34 +1,34 @@
  <nav class="bg-white shadow">
     <div
-      class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize"
+      class="container flex items-center justify-center gap-3 p-5 mx-auto text-gray-600 capitalize"
     >
       <a
-        href="#"
-        class="text-gray-800 transition-colors duration-300 transform border-b-2 border-blue-500 mx-1.5 sm:mx-6"
-        >home</a
+      routerLink="/dashboard"
+        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ (router.url === '/dashboard') ? 'border-[#2B3467]' : '' }}"
+        >Main</a
       >
 
       <a
-        href="#"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6"
-        >features</a
+        routerLink="/article"
+        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ router.url === '/article' ? 'border-[#2B3467]' : '' }}"
+        >Article</a
       >
 
       <a
-        href="#"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6"
-        >pricing</a
+        routerLink="/apps"
+        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ router.url === '/apps' ? 'border-[#2B3467]' : '' }}"
+        >Apps</a
       >
 
       <a
-        href="#"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6"
-        >blog</a
+        routerLink="/team"
+        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ router.url === '/team' ? 'border-[#2B3467]' : '' }}"
+        >Team</a
       >
 
-      <a
+      <!-- <a
         href="#"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6"
+        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6"
       >
         <svg
           class="w-4 h-4 fill-current"
@@ -47,7 +47,7 @@
 
       <a
         href="#"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-blue-500 mx-1.5 sm:mx-6"
+        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6"
       >
         <svg
           class="w-5 h-5 fill-current"
@@ -64,6 +64,6 @@
             d="m21.308 6.464c.993 0 .992-1.5 0-1.5h-5.87c-.993 0-.992 1.5 0 1.5z"
           />
         </svg>
-      </a>
+      </a> -->
     </div>
   </nav>

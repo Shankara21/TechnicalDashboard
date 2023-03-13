@@ -9,7 +9,7 @@ export class ControlService {
    private url = 'http://localhost:3000/';
   private techtalk = 'http://192.168.9.47:3125/'
   private projectDev = 'http://192.168.9.47:3737/'
-  
+
   constructor(private HttpClient: HttpClient) { }
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,15 +23,15 @@ export class ControlService {
 
   // Projects
   getAllProjects() {
-    return this.HttpClient.get(this.url + 'projects/index')
+    return this.HttpClient.get(this.projectDev + 'projects/index')
       .pipe(catchError(this.errorHttpHandler))
   }
    filterALLChartYear(year: any) {
-    return this.HttpClient.get(this.url + `projects/filterAllByYear/${year}`)
+    return this.HttpClient.get(this.projectDev + `projects/filterAllByYear/${year}`)
       .pipe(catchError(this.errorHttpHandler))
   }
   filterChartBySection(section: any, year: any) {
-    return this.HttpClient.get(this.url + `projects/filterBySection/${year}/${section}`)
+    return this.HttpClient.get(this.projectDev + `projects/filterBySection/${year}/${section}`)
       .pipe(catchError(this.errorHttpHandler))
   }
 
@@ -42,49 +42,49 @@ export class ControlService {
 
   // Categories
   getCategories() {
-    return this.HttpClient.get(this.url + 'categories')
+    return this.HttpClient.get(this.techtalk + 'categories')
       .pipe(catchError(this.errorHttpHandler))
   }
   showCategories(id: any) {
-    return this.HttpClient.get(this.url + 'categories/' + id)
+    return this.HttpClient.get(this.techtalk + 'categories/' + id)
       .pipe(catchError(this.errorHttpHandler))
   }
   createCategory(params: any) {
-    return this.HttpClient.post(this.url + `categories`, params)
+    return this.HttpClient.post(this.techtalk + `categories`, params)
       .pipe(catchError(this.errorHttpHandler))
   }
   updateCategory(id: any, params: any) {
-    return this.HttpClient.put(this.url + `categories/${id}`, params)
+    return this.HttpClient.put(this.techtalk + `categories/${id}`, params)
       .pipe(catchError(this.errorHttpHandler))
   }
   deleteCategory(id: any) {
-    return this.HttpClient.delete(this.url + `categories/${id}`)
+    return this.HttpClient.delete(this.techtalk + `categories/${id}`)
       .pipe(catchError(this.errorHttpHandler))
   }
 
   // Articles
   getArticles() {
-    return this.HttpClient.get(this.url + 'articles')
+    return this.HttpClient.get(this.techtalk + 'articles')
       .pipe(catchError(this.errorHttpHandler))
   }
   showArticles(title: any) {
-    return this.HttpClient.get(this.url + 'articles/' + title)
+    return this.HttpClient.get(this.techtalk + 'articles/' + title)
       .pipe(catchError(this.errorHttpHandler))
   }
   createArticle(params: any) {
-    return this.HttpClient.post(this.url + `articles`, params)
+    return this.HttpClient.post(this.techtalk + `articles`, params)
       .pipe(catchError(this.errorHttpHandler))
   }
   updateArticle(id: any, params: any) {
-    return this.HttpClient.put(this.url + `articles/${id}`, params)
+    return this.HttpClient.put(this.techtalk + `articles/${id}`, params)
       .pipe(catchError(this.errorHttpHandler))
   }
   deleteArticle(id: any) {
-    return this.HttpClient.delete(this.url + `articles/${id}`)
+    return this.HttpClient.delete(this.techtalk + `articles/${id}`)
       .pipe(catchError(this.errorHttpHandler))
   }
   filterCategory(name: any) {
-    return this.HttpClient.get(this.url + `articles/filter/${name}`)
+    return this.HttpClient.get(this.techtalk + `articles/filter/${name}`)
       .pipe(catchError(this.errorHttpHandler))
   }
 
