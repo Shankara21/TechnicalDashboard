@@ -15,6 +15,7 @@ import { DetailArticleComponent } from './pages/article/detail-article/detail-ar
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     TeamComponent,
     HeaderComponent,
     IndexArticleComponent,
-    DetailArticleComponent
+    DetailArticleComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
