@@ -1,32 +1,40 @@
- <nav class="m-3 bg-white shadow-xl rounded-xl">
-    <div
-      class="container flex items-center justify-center gap-3 p-4 mx-auto text-gray-600 capitalize"
-    >
-      <a
+<nav class="m-3 bg-white shadow-xl rounded-xl">
+  <div
+    class="container flex items-center justify-center gap-3 p-4 mx-auto text-gray-600 capitalize"
+  >
+    <a
       routerLink="/dashboard"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ (router.url === '/dashboard') ? 'border-[#2B3467]' : '' }}"
-        >Main</a
-      >
+      class="border-b-2  hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{
+        router.url === '/dashboard' ? 'border-[#2B3467]' : 'border-transparent'
+      }}"
+      >Main</a
+    >
 
-      <a
-        routerLink="/article"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ router.url === '/article' ? 'border-[#2B3467]' : '' }}"
-        >Article</a
-      >
+    <a
+      routerLink="/article"
+      class="border-b-2  hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{
+        router.url === '/article' ? 'border-[#2B3467]' : 'border-transparent'
+      }}"
+      >Article</a
+    >
 
-      <a
-        routerLink="/apps"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ router.url === '/apps' ? 'border-[#2B3467]' : '' }}"
-        >Apps</a
-      >
+    <a
+      routerLink="/apps"
+      class="border-b-2  hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{
+        router.url === '/apps' ? 'border-[#2B3467]' : 'border-transparent'
+      }}"
+      >Apps</a
+    >
 
-      <a
-        routerLink="/team"
-        class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{ router.url === '/team' ? 'border-[#2B3467]' : '' }}"
-        >Team</a
-      >
+    <a
+      routerLink="/team"
+      class="border-b-2  hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6 text-lg {{
+        router.url === '/team' ? 'border-[#2B3467]' : 'border-transparent'
+      }}"
+      >Team</a
+    >
 
-      <!-- <a
+    <!-- <a
         href="#"
         class="border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform hover:border-[#2B3467] mx-1.5 sm:mx-6"
       >
@@ -65,5 +73,5 @@
           />
         </svg>
       </a> -->
-    </div>
-  </nav>
+  </div>
+</nav>
