@@ -5,20 +5,20 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Chart, registerables } from 'chart.js'
 Chart.register(...registerables)
 @Component({
-  
+
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
 
-   constructor( public ControlService: ControlService, private router: Router,) { }
+  constructor(public ControlService: ControlService, private router: Router,) { }
 
-   // projects
+  // projects
   name: any[] = [];
   progress: any[] = [];
 
-   // card
+  // card
   nameProject: any[] = [];
   progressProject: any[] = [];
 
@@ -39,7 +39,7 @@ export class MainComponent implements OnInit {
   rmdChart!: FormGroup;
   pmdChart!: FormGroup;
 
-   ngOnInit():void{
+  ngOnInit(): void {
     const startYear = 2023
     for (let i = startYear; i < new Date().getFullYear() + 6; i++) {
       this.years.push(i)
@@ -58,15 +58,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempProjectProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#D61355',
-              '#F94A29',
-              '#FCE22A',
-              '#30E3DF',
-              '#FFB830',
-              '#3B14A7'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -83,7 +76,11 @@ export class MainComponent implements OnInit {
                 }
               }
             },
-
+            x: {
+              ticks: {
+                display: false
+              }
+            }
           }
         }
       })
@@ -98,15 +95,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempProcessProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#EB5353',
-              '#F9D923',
-              '#36AE7C',
-              '#187498',
-              '#4D96FF',
-              '#E4508F'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -123,7 +113,11 @@ export class MainComponent implements OnInit {
                 }
               }
             },
-
+            x: {
+              ticks: {
+                display: false
+              }
+            }
           }
         }
       });
@@ -138,15 +132,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempRawProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#0081C9',
-              '#5BC0F8',
-              '#F49D1A',
-              '#B01E68',
-              '#7743DB',
-              '#379237'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -163,7 +150,11 @@ export class MainComponent implements OnInit {
                 }
               }
             },
-
+            x: {
+              ticks: {
+                display: false
+              }
+            }
           }
         }
       })
@@ -178,15 +169,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempPackagingProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#53BF9D',
-              '#F94C66',
-              '#BD4291',
-              '#FFC54D',
-              '#F900BF',
-              '#FF1700'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -203,6 +187,11 @@ export class MainComponent implements OnInit {
                 }
               }
             },
+            x: {
+              ticks: {
+                display: false
+              }
+            }
 
           }
         }
@@ -229,9 +218,9 @@ export class MainComponent implements OnInit {
       year: new FormControl('', Validators.required),
       section: new FormControl('pmd', Validators.required)
     })
-   }
+  }
 
-    filterAllChart() {
+  filterAllChart() {
     this.allChart.value.year = Number(this.allChart.value.year)
     console.log('VALUE');
     console.log(this.allChart.value);
@@ -260,15 +249,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempProjectProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#D61355',
-              '#F94A29',
-              '#FCE22A',
-              '#30E3DF',
-              '#FFB830',
-              '#3B14A7'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -304,15 +286,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempProcessProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#EB5353',
-              '#F9D923',
-              '#36AE7C',
-              '#187498',
-              '#4D96FF',
-              '#E4508F'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -349,15 +324,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempRawProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#0081C9',
-              '#5BC0F8',
-              '#F49D1A',
-              '#B01E68',
-              '#7743DB',
-              '#379237'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -394,15 +362,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempPackagingProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#53BF9D',
-              '#F94C66',
-              '#BD4291',
-              '#FFC54D',
-              '#F900BF',
-              '#FF1700'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -445,15 +406,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempPJDProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#D61355',
-              '#F94A29',
-              '#FCE22A',
-              '#30E3DF',
-              '#FFB830',
-              '#3B14A7'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -496,15 +450,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempPSDProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#EB5353',
-              '#F9D923',
-              '#36AE7C',
-              '#187498',
-              '#4D96FF',
-              '#E4508F'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -546,15 +493,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempRMDProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#0081C9',
-              '#5BC0F8',
-              '#F49D1A',
-              '#B01E68',
-              '#7743DB',
-              '#379237'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
@@ -595,15 +535,8 @@ export class MainComponent implements OnInit {
             label: 'Progress',
             data: tempPMDProgress,
             borderWidth: 0,
-            borderRadius: 20,
-            backgroundColor: [
-              '#53BF9D',
-              '#F94C66',
-              '#BD4291',
-              '#FFC54D',
-              '#F900BF',
-              '#FF1700'
-            ],
+
+            backgroundColor: ["#fd7f6f", "#7eb0d5", "#b2e061", "#bd7ebe", "#ffb55a", "#ffee65", "#beb9db", "#fdcce5", "#8bd3c7"],
           }]
         },
         options: {
