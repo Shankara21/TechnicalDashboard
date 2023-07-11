@@ -17,14 +17,14 @@
       /> -->
       <img
         class="h-auto max-w-md mb-5 rounded-xl"
-        src="http://192.168.9.47:3125/{{ article.infografis }}"
-        *ngIf="article.infografis"
+        src="http://192.168.9.47:3125{{ article.infografis }}"
       />
     </div>
 
-    <p class="mb-3 font-light text-justify text-gray-500">
+    <!-- <p class="mb-3 font-light text-justify text-gray-500">
       {{ article.desc }}
-    </p>
+    </p> -->
+    <div [innerHTML]="article.desc" class="list-disc"></div>
     <div class="flex items-center justify-between mt-5">
       <h1 class="text-xl font-bold text-gray-700">
         Publisher : {{ article.User.username }}

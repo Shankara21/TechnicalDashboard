@@ -23,6 +23,7 @@ export class DetailArticleComponent implements OnInit {
     this.id = this.router.url.split('/')[2];
     this.ControlService.showArticles(this.id).subscribe((data: any) => {
       this.article = data;
+      console.log(this.article);
       // membuat waktu yang sudah berlalu
       setTimeout(() => {
         this.diffTime = moment(this.article.createdAt).fromNow();
